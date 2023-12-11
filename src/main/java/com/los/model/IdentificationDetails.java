@@ -5,17 +5,17 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-//@Entity
+@Entity
 public class IdentificationDetails {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO )
-//    private long id;
-//    private String aadhar;
-//    private String pan;
-//    private String drivingLicence ;
-//    private String voterId;
-//    private String passportId;
-//    private String rationCard;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO )
+    private long id;
+    private String aadhar;
+    private String pan;
+    private String drivingLicence ;
+    private String voterId;
+    private String passportId;
+    private String rationCard;
 
 
 
