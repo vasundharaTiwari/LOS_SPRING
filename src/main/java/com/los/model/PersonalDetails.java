@@ -1,19 +1,26 @@
 package com.los.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+
 
 @Entity
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 
 public class PersonalDetails {
+
+    public void setSalutation(String salutation) {
+        this.salutation = salutation;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO )
     private Long ID;
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    @Getter
     private String salutation;
     private String firstName;
     private String  middleName;
@@ -37,11 +44,24 @@ public class PersonalDetails {
     private String cif;
     private String filled_by;
     private String branch_code;
+
+    public Long getID() {
+        return ID;
+    }
+
+    public void setID(Long ID) {
+        this.ID = ID;
+    }
+
     private String branch_name;
+
     private String ro_name;
     private String submit_date;
     private String ApplicationID;
     private String Customer_type;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private IdentificationDetails identificationDetails;
 
 
 }
